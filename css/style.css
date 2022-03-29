@@ -1,6 +1,24 @@
+/* ==========================================================================
+   Miscellaneous
+   ========================================================================== */
+
 @font-face {
     font-family: "Cute Aurora";
     src: url("../fonts/Cute_Aurora.ttf");
+}
+
+@font-face {
+    font-family: "Dosis";
+    src: url("../fonts/Dosis-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: "Dosis Regular";
+    src: url("../fonts/Dosis-Regular.ttf");
+}
+
+html {
+    background-color:#fcfbfa;
 }
 
 /* ==========================================================================
@@ -8,178 +26,68 @@
    ========================================================================== */
 
 /**
- * Grid container
+ * Header
  *
- * Must only contain `.cell` children.
+ * It's divided into two parts: banner and top navigation bar.
  *
- * 1. Remove inter-cell whitespace
- * 2. Prevent inline-block cells wrapping
+ * 1. Its width and height are set by media query.
+ *
  */
 
-header, body {
-    background-color:#fcfbfa;
-}
-
-#header-container {
+.header {
     margin: 0 auto;
-    margin-top: -22px;
+    margin-top: -8px;
     color: white;
     font-family: 'Cute Aurora'; 
 }
 
-#banner-container {
-    background: #c1dee7;
-    border-radius: 15px;
-}
+/**
+ * Logo wrapper
+ *
+ * Its width is set by media query.
+ *
+ */
 
-#title-wrapper {
-    padding-left: 35px;
-    padding-top: 60px;
-    font-weight:bold;
-}
-
-
-#subtitle {
-  padding-left: 779px;
-  padding-top: 9px;
-  font-weight:bold;
-  font-size: 18px;
-}
-
-#logo-wrapper {
-    width: 220px;
+ .logo-wrapper {
     margin-left: 540px;
-    margin-top:  -100px;
-    position:absolute;
+    margin-top: 6px;
+    position: absolute;
 }
 
-.first .wrara {
-  font-family: 'Cute Aurora'; 
-  display:inline-block;
-  font-weight: bold;
+/* ==========================================================================
+   Banner
+   ========================================================================== */
+
+/**
+ * Banner
+ *
+ * Represents the first half of the header, and its height is set by media query.
+ *
+ */
+
+.banner {
+    background: #c1dee7;
+    border-radius: 0px 0px 15px 15px
 }
 
-#menu-wrapper {
-    border-bottom-style: solid;
-    border-bottom-color: #fff;
-    border-bottom-width: 2px;
+/**
+ * Scallop container
+ *
+ * 1. Holds scallop's both parts together.
+ */
+
+.banner .scallop-container {
+    height: 90px;
 }
 
-.icons-container {
-    margin-top: -27px;
-    margin-right: 12px;
-}
-
-.icons-container ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    background-color:white;
-    overflow: hidden;
-    background-color: none;
-    border: none;
-    font-weight:bold;
-}
-
-span {
-  color: #f3d35a;
-}
-
-span:hover {
-  color:#ecb4bd;
-}
-
-.icons-container li {
-    list-style-type: none;
-    float: right;
-    background-color: transparent;
-}
-
-.icons-container li a {
-    display: inline-block;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    text-decoration: none;
-}
-
-.icons-container li a:hover {
-  color: #c2a094;
-}
-
-/* menu */
-
-
-.menu-container ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  padding-left: 5px;
-  padding-right: 55px;
-  overflow: hidden;
-  background-color: none;
-  border-top: 1px solid #b47d50;
-  border-bottom: 1px solid #b47d50;
-  margin-top: 5px;
-  font-weight:bold;
-}
-
-.menu-container .first {
-  float: left;
-}
-
-.menu-container .last {
-  float: right;
-}
-
-.menu-container li a, .dropbtn {
-  display: inline-block;
-  color: #b47d50;
-  text-align: center;
-  padding: 14px 25px;
-  text-decoration: none;
-  font-size: 20px;
-}
-
-.menu-container li a:hover, .dropdown:hover .dropbtn {
-  color: #ecb4bd;
-}
-
-.menu-container li.dropdown {
-  display: inline-block;
-}
-
-.menu-container .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.menu-container .dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.menu-container .dropdown-content a:hover {background-color: #f1f1f1;}
-
-.menu-container .dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/*----*/
-.scallop {
-    position:relative;
+.banner .scallop {
+    position: relative;
     background: #c2a094;
-    padding:15px;
-  }
-  .scallop::after { 
-    position:absolute;
+    padding:22px;
+}
+  
+.banner .scallop::after { 
+    position: absolute;
     bottom: -50px;
     left: 0px;
     width: 100%;
@@ -187,391 +95,270 @@ span:hover {
     background: 
     radial-gradient(circle at 50% 0%, #c2a094 25%, #c1dee7 26%, #c1dee7 40%);
     background-color: #E26464;
-    background-size:50px 100px;
-    height:50px;
+    background-size: 50px 100px;
+    height: 50px;
     background-repeat: repeat-x;
-  }
-
-/* Desktop grande */
-@media (min-width: 1025px) {
-    #header-container {
-        height: 600px;
-        width: 1000px;
-    }
-
-    #banner-container  {
-        height: 180px;
-        width: 1000px;
-    }
-
-    #title-wrapper {
-        font-size: 100px;
-    }
 }
 
-/* Mobile */
-@media (min-width: 769px) and (max-width: 1024px) {
-    #header-container {
-        height: 250px;
-        width: 750px;
-    }
+/**
+ * Title wrapper
+ *
+ * Its width and font size are set by media query.
+ *
+ */
 
-    #banner-container  {
-        height: 250px;
-        width: 750px;
-    }
-
-    #title-wrapper {
-        font-size: 300px;
-    }
+.banner .title-wrapper {
+    position: absolute;
+    margin-top: -14px;
+    margin-left: 35px;
+    font-weight: bold;
 }
 
-.searchContainer {
-  margin-top: 7px;
-  margin-right: -25px;
-  flex: 1 1 300px;
-  border: none;
-  border-radius: 5px;
-  overflow: hidden;
-  background-color: #f5e2d0;
-  color: red;
+/**
+ * Social media
+ *
+ */
+
+.banner .social-media {
+    margin-top: 70px;
+    margin-right: 20px;
+    float: right;
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
 }
-
-.searchContainer input[type=search]:focus {
-  outline: none;
-}
-
-.searchContainer input[type=search] {
-  font-family: "Cute Aurora";
-  font-size: 18px;
-}
-
-.searchIcon {
-  padding: 0.5rem;
-  color: #b47d50;
-}
-
-.searchBox {
-  border: 0;
-  padding: 8px;
-  padding-right: 1px;
-  padding-left: 2px;
-  flex: 1;
-  background-color: #f5e2d0;
-  color: #777371;
-}
-
-.searchBox::placeholder {
-  color: #777371;
-}
-
-
-.searchButton {
-  padding: 0.5rem;
-  color: #b47d50;
-  background:transparent;
-  border:none;
-}
-
-/* ///////////////// */
-
-.popout {
-  position: absolute;
-  bottom: 3rem;
-  right: 3rem;
-}
-
-.popout #botao:hover {
-  color:white;
-}
-.popout .popMessage {
-  box-shadow: 0 0 5px rgba(0,0,0,0.50);
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 340px;
-  margin-right: -30px;
-  margin-bottom: 80px;
-  text-align: left;
-  overflow: hidden;
-  visibility: hidden;
-  transform: scale(0);
-  transform-origin: 100% 100%;
-  transition: all 0.2s;
-  opacity: 0;
-  background-color: #266494;
-  border: none;
-  padding: 0px;
-  padding-bottom: 20px;
-  font-size: 15px;
-  color: white;
-  border-radius:6px;
-}
-
-.popout .popMessage .header {
-  background-color:#266494;
-  padding-top: 15px;
-  padding-left: 25px;
-  padding-bottom: 0px;
-}
-
-.popout .popMessage.animation{
-  height: auto;
-  opacity: 1;
-  visibility: visible;
-  transform: scale(1);
-  transition: transform 0.2s, visibility 0s 0s, opacity 0.2s;
-}
-
-.popout button {
-	border-radius:6px;
-  margin: 0 auto;
-  margin-top: 20px;
-  display: block;
-	border: none;
-	cursor:pointer;
-	color:#266494;
-	font-family:Arial;
-	font-size:14px;
-  width: 290px;
-  white-space: nowrap;
-	padding:8px 54px;
-	text-decoration:none;
-  text-align: left;
   
+.banner .social-media div {
+    font-size: 21px;
+    font-family: "Dosis";
+}
+  
+.banner .social-media a {
+    font-size:20px;
+    text-decoration: none;
+    color: white;
+    padding-left: 3px;
+    padding-right: 3px;
 }
 
-.popout .buttonPoll {
-  margin-bottom: -20px;
-  width: 340px;
-	background-color: white;
-  border-top: 2px solid #00A3DD;
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
-  font-weight: bold;
-  font-size: 17px;
-  padding:8px 70px;
-  color:#235277;
-
+.banner .social-media a:hover {
+    color: #c2a094;
 }
 
-.popout .fa-whatsapp {
-  font-size: 28px;
-  position: absolute;
-   margin-left: -37px;
-   margin-top: 8px;
+/* ==========================================================================
+   Top navigation bar
+   ========================================================================== */
+
+/**
+ * Topnav
+ *
+ * Represents the second half of the header.
+ *
+ * 1. Holds all content of the navigation bar.
+ *
+ */
+
+.topnav {
+    overflow: hidden;
+    border-top: 1px solid #b47d50;
+    border-bottom: 1px solid #b47d50;
+    margin-top: 5px;
+    font-family: "Dosis";
 }
 
-.popout .fa-comments {
-  font-size: 25px;
-  position: absolute;
-   margin-left: -40px;
-   margin-top: 10px;
+/**
+ * Cart wrapper
+ *
+ * 1. Aligns the cart <a> + <i> icon.
+ *
+ */
+ 
+.topnav .cart-wrapper {
+     display: flex;
+ }
+
+.topnav .cart-wrapper i {
+     margin-top: 2px;
+     margin-right: 4px;
+     font-size: 21px;
+ }
+
+/**
+ * Span cart, new
+ *
+ * 1. Set menu's "CART" option font family and weight, so it doesn't affect its font awesome icon.
+ * 2. Set menu's "NEW" option's color.
+ */
+
+.topnav span.cart {
+    font-family: "Dosis";
+    font-size: 20px;
 }
 
-.popout .fa-vote-yea{
-  font-size: 30px;
-  position: absolute;
-  margin-left: -50px;
-  margin-top: 38px;
-  color:#235277;
-
+.topnav .new {
+    color: #f3d35a;
 }
 
-.popout button:hover i {
-	color: white;
+/**
+ * Dropdown
+ *
+ * 1. Hides and shows dropdown content when top nav's "PRODUCTS" option is hovered.
+ *
+ */
+
+ .topnav .dropdown a {
+    text-decoration: none;
+    color: #b47d50;
 }
 
-.popout button a {
-  text-decoration:none;
-  color:#235277;
-}
-
-.popout button:hover a {
-  color: white;
-}
-
-.popout button:hover {
-	background-color:#7e97b4;
-}
+.topnav > a, .topnav .dropdown > a {
+    float: left;
+    color: #b47d50;
+    text-align: center;
+    padding: 14px 25px;
+    text-decoration: none;
+    font-size: 20px;
+    overflow: hidden;
     
-.popout .btn {
-  animation: shake 8s cubic-bezier(.80,.07,.80,.97) both infinite;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  perspective: 1000px;
-  float: right;
 }
 
-.popout .btn .cooco{
-  width: 80px;
-  margin-top: -30px;
-  margin-left: -15px;
+.topnav > a:hover, .topnav .dropdown > a:hover {
+    color: #ecb4bd;
 }
 
-@keyframes shake {
-  10%, 30% {
-    transform: translate3d(-1px, 0, 0);
-  }
-  
-  20%, 80% {
-    transform: translate3d(2px, 0, 0);
-  }
+/**
+ * Dropdown content
+ *
+ * It's a submenu within dropdown class.
+ *
+ */
 
-  30%, 50%, 70% {
-    transform: translate3d(-4px, 0, 0);
-  }
-
-  40%, 60% {
-    transform: translate3d(4px, 0, 0);
-  }
-}
-
-.popout .btn {
-  display: inline-block;
-  position: relative;
-  outline: none;
-  -webkit-user-select: none;
-  user-select: none;
-  cursor: pointer;
-  width: 60px;
-  height: 60px;
-  line-height: 60px;
-  text-align: center;
-  font-size: 14px;
-  z-index: 999;
-  background: none;
-  color: #00A3DD;
-  border-radius: 50%;
-  transition:0.2s opacity ease-in-out;
-  -webkit-transition:0.2s opacity ease-in-out;
-}
-.popout .btn.active {
-  visibility: hidden;
-  opacity: 0;
-}
-
-.popout .btn:after {
-  display: block;
-  position: absolute;
-  top: 0;
-  content: "";
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  background-color:transparent;
-  z-index: -2;
-  -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
-  -moz-transition: -moz-transform 0.2s, opacity 0.2s;
-  transition: transform 0.2s, opacity 0.2s;
-}
-.popout .btn:active:after {
-  -webkit-transform: scale(1.3);
-  -moz-transform: scale(1.3);
-  -ms-transform: scale(1.3);
-  transform: scale(1.3);
-  opacity: 0;
-}
-
-
-.popout .panel {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 340px;
-  text-align: left;
-  overflow: hidden;
-  visibility: hidden;
-  transform: scale(0);
-  transform-origin: 100% 100%;
-  transition: all 0.2s;
-  opacity: 0;
-  color:white;
-}
-.popout .panel.active {
-  height: auto;
-  opacity: 1;
-  visibility: visible;
-  transform: scale(1);
-  transition: transform 0.2s, visibility 0s 0s, opacity 0.2s;
-}
-.popout .panel-header {
-  padding: 20px;
-  font-size: 14px;
-  background-color: #1D70A2;
-  color: #fff;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-}
-
-.popout .message-chat {
-    position: relative;
-    margin-bottom: 5px;
-    margin-left: calc(100% - 260px);
-    padding: 10px;
-    background-color: #266494;;
-    width: 150px;
-    height: 20px;
+.topnav .dropdown .dropdown-content {
+    display: none;
+    margin-left: 282px;
+    margin-top: 54px;
     text-align: left;
-    font: 13px 'Open Sans', sans-serif;
-    border: 1px solid #266494;
-    border-radius: 10px;
-}
-
-.popout .message-content {
-    padding: 0;
-    margin: -5px;
-    margin-left: 3px;
-}
-
-.popout .message-chat:after {
-    content: '';
+    font-size: 18px;
     position: absolute;
-    width: 0;
-    height: 0;
-    border-bottom: 10px solid #266494;
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    bottom: 0;
-    right: -15px;
+    width: 180px;
+    z-index: 1;
+    background-color:#fcfbfa;
+    border-left: 1px solid #b47d50;
+    border-right: 1px solid #b47d50;
+    border-bottom: 1px solid #b47d50;
+    font-weight: 550;
+    padding-bottom: 10px;
 }
 
-.popout .message-chat:before {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-bottom: 10px solid #266494;
-    border-left: 16px solid transparent;
-    border-right: 16px solid transparent;
-    bottom: -1px;
-    right: -17px;
+.topnav .dropdown .dropdown-content a {
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-decoration: none;
+    color: #b47d50;
 }
 
-.box3 {
-  width: 200px;
-  margin-top: 250px;
-  margin-left: 1550px;
-  border-radius: 15px;
-  background: #efbcb8;
-  color: #fff;
-  padding: 10px;
-  text-align: center;
-  font-size: 22px;
-  font-family: "Cute Aurora";
-  position: relative;
+.topnav .dropdown .dropdown-content a:hover {
+    background-color: #f5e2d0;
 }
 
-.sb13:before {
-  content: "";
-  width: 0px;
-  height: 0px;
-  position: absolute;
-  border-left: 15px solid #efbcb8;
-  border-right: 15px solid transparent;
-  border-top: 15px solid #efbcb8;
-  border-bottom: 15px solid transparent;
-  right: -16px;
-  top: 0px;
+
+.topnav .dropdown:hover .dropdown-content {
+    display: flex;
+    flex-direction: column;
 }
 
+/* ==========================================================================
+   Search box
+   ========================================================================== */
+
+/**
+ * Search box
+ *
+ */
+
+.search-box {
+    float: right;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-right: 20px;
+}
+
+.search-box input[type="search"]::-webkit-search-decoration,
+    input[type="search"]::-webkit-search-cancel-button,
+    input[type="search"]::-webkit-search-results-button,
+    input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance:none;
+}
+
+ .search-box input[type=search] {
+    background-color: #f5e2d0;
+    border-radius: 5px;
+    border: none;
+    font-size: 18px;
+    font-family: "Dosis Regular";
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 38px;
+    color: #696765;
+}
+
+.search-box input[type=search]:focus {
+    outline: 1px solid #c2a094;
+}
+
+.search-box ::placeholder {
+    font-family:"Dosis Regular";
+    font-style: italic;
+    color: #8d8b89;
+  }
+
+.search-box button {
+    text-decoration: none;
+    position: fixed;
+    font-family:'FontAwesome';
+    font-weight: 100px;
+    font-size: 18px;
+    height: 37px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.search-box button i {
+    font-family:'FontAwesome';
+    color: #b47d50;
+    font-size: 19px;
+}
+
+/* ==========================================================================
+   Media queries
+   ========================================================================== */
+
+/**
+ * Large desktop
+ */
+
+@media (min-width: 1025px) {
+    .header {
+        height: 279px;
+        width: 1000px;
+    }
+
+    .banner  {
+        height: 196px;
+    }
+
+    .title-wrapper {
+        font-size: 100px;
+        width: 492px;
+    }
+
+    .logo-wrapper {
+        width: 220px;
+    }
+}
