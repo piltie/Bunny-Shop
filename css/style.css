@@ -18,7 +18,7 @@
 }
 
 html {
-    background-color:#fcfbfa;
+    background-color:#fff8f1;
 }
 
 /* ==========================================================================
@@ -35,8 +35,8 @@ html {
  */
 
 .header {
-    margin: 0 auto;
     margin-top: -8px;
+    margin-left: -7px;
     color: white;
     font-family: 'Cute Aurora'; 
 }
@@ -49,8 +49,8 @@ html {
  */
 
  .logo-wrapper {
-    margin-left: 540px;
-    margin-top: 6px;
+    margin-left: 800px;
+    margin-top: 10px;
     position: absolute;
 }
 
@@ -66,7 +66,7 @@ html {
  */
 
 .banner {
-    background: #c1dee7;
+    background: #f2e8ce;
     border-radius: 0px 0px 15px 15px
 }
 
@@ -82,8 +82,8 @@ html {
 
 .banner .scallop {
     position: relative;
-    background: #c2a094;
-    padding:22px;
+    background: #3b3829;
+    padding: 22px;
 }
   
 .banner .scallop::after { 
@@ -93,7 +93,7 @@ html {
     width: 100%;
     content:" ";
     background: 
-    radial-gradient(circle at 50% 0%, #c2a094 25%, #c1dee7 26%, #c1dee7 40%);
+    radial-gradient(circle at 50% 0%, #3b3829 25%, #f2e8ce 26%, #f2e8ce 40%);
     background-color: #E26464;
     background-size: 50px 100px;
     height: 50px;
@@ -109,9 +109,12 @@ html {
 
 .banner .title-wrapper {
     position: absolute;
-    margin-top: -14px;
-    margin-left: 35px;
-    font-weight: bold;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto;
+    margin-top: -80px;
+    font-family: "Dosis";
 }
 
 /**
@@ -161,10 +164,11 @@ html {
 
 .topnav {
     overflow: hidden;
-    border-top: 1px solid #b47d50;
-    border-bottom: 1px solid #b47d50;
-    margin-top: 5px;
+    background-color: #3b3829;
+    margin-top: 0px;
     font-family: "Dosis";
+    display: flex;
+    justify-content: center;
 }
 
 /**
@@ -209,12 +213,11 @@ html {
 
  .topnav .dropdown a {
     text-decoration: none;
-    color: #b47d50;
+    color: white;
 }
 
 .topnav > a, .topnav .dropdown > a {
-    float: left;
-    color: #b47d50;
+    color: white;
     text-align: center;
     padding: 14px 25px;
     text-decoration: none;
@@ -279,7 +282,6 @@ html {
  */
 
 .search-box {
-    float: right;
     padding-top: 8px;
     padding-bottom: 8px;
     margin-right: 20px;
@@ -293,7 +295,7 @@ html {
 }
 
  .search-box input[type=search] {
-    background-color: #f5e2d0;
+    background-color: #fff8ef;
     border-radius: 5px;
     border: none;
     font-size: 18px;
@@ -332,9 +334,28 @@ html {
 
 .search-box button i {
     font-family:'FontAwesome';
-    color: #b47d50;
+    color: #3b3829    ;
     font-size: 19px;
 }
+
+/* ==========================================================================
+   Content
+   ========================================================================== */
+
+.content {
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 1500px;
+}
+
+.advertising {
+    display: flex;
+}
+
+.advertising img {
+    width: 800px;
+}
+
 
 /* ==========================================================================
    Media queries
@@ -347,19 +368,19 @@ html {
 @media (min-width: 1025px) {
     .header {
         height: 279px;
-        width: 1000px;
+        width: 1918px;
     }
 
     .banner  {
-        height: 196px;
+        height: 250px;
     }
 
     .title-wrapper {
-        font-size: 100px;
-        width: 492px;
+        font-size: 15px;
+        width: 300px;
     }
 
     .logo-wrapper {
-        width: 220px;
+        width: 400px;
     }
 }
