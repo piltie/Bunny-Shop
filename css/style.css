@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Miscellaneous
+   Font face REM - MARGIN/FONT SIZE - EM - PADDING/WIDTH/HEIGHT
    ========================================================================== */
 
 @font-face {
@@ -8,7 +8,7 @@
 }
 
 @font-face {
-    font-family: "Dosis";
+    font-family: "Dosis Semi Bold";
     src: url("../fonts/Dosis-SemiBold.ttf");
 }
 
@@ -17,281 +17,197 @@
     src: url("../fonts/Dosis-Regular.ttf");
 }
 
+@font-face {
+    font-family: "Konkret Grotesk Pro Light";
+    src: url("../fonts/KonkretGroteskPro-Light.ttf");
+}
+
+@font-face {
+    font-family: "Konkret Grotesk Pro Medium";
+    src: url("../fonts/KonkretGroteskPro-Medium.ttf");
+}
+
+@font-face {
+    font-family: "Konkret Grotesk Pro Bold";
+    src: url("../fonts/KonkretGroteskPro-Bold.ttf");
+}
+
+/* ==========================================================================
+   Html, body and header
+   ========================================================================== */
+
 html {
-    background-color:#fff8f1;
+    background-color:white;
+    font-family: "Konkret Grotesk Pro Light";
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    height: 19em;
+    background-color: #f2e8ce;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    overflow: hidden;
+}
+
+header img {
+    width: 20em;
+}
+
+header > a {
+    width: inherit;
+    margin: 0 auto;
+    height: 6.3em;
+    margin-top: 3.5rem;
 }
 
 /* ==========================================================================
-   Header layout
+   Scallop
    ========================================================================== */
 
-/**
- * Header
- *
- * It's divided into two parts: banner and top navigation bar.
- *
- * 1. Its width and height are set by media query.
- *
- */
-
-.header {
-    margin-top: -8px;
-    margin-left: -7px;
-    color: white;
-    font-family: 'Cute Aurora'; 
-}
-
-/**
- * Logo wrapper
- *
- * Its width is set by media query.
- *
- */
-
- .logo-wrapper {
-    margin-left: 800px;
-    margin-top: 10px;
-    position: absolute;
-}
-
-/* ==========================================================================
-   Banner
-   ========================================================================== */
-
-/**
- * Banner
- *
- * Represents the first half of the header, and its height is set by media query.
- *
- */
-
-.banner {
-    background: #f2e8ce;
-    border-radius: 0px 0px 15px 15px
-}
-
-/**
- * Scallop container
- *
- * 1. Holds scallop's both parts together.
- */
-
-.banner .scallop-container {
-    height: 90px;
-}
-
-.banner .scallop {
+.scallop {
     position: relative;
     background: #3b3829;
-    padding: 22px;
+    padding: 1em;
+    text-align: center;
+    font-family: "Dosis Semi Bold";
+    font-size: 1rem;
+    color: white;
 }
   
-.banner .scallop::after { 
+.scallop::after { 
     position: absolute;
-    bottom: -50px;
-    left: 0px;
-    width: 100%;
+    bottom: -1.3rem;
+    left: 0;
+    width: 100vw;
     content:" ";
     background: 
-    radial-gradient(circle at 50% 0%, #3b3829 25%, #f2e8ce 26%, #f2e8ce 40%);
-    background-color: #E26464;
-    background-size: 50px 100px;
-    height: 50px;
+    radial-gradient(circle at 50% 0%, #3b3829 25%, transparent 26%, transparent 40%);
+    background-color: transparent;
+    background-size: 3em 6.1em;
+    height: 1.7em;
     background-repeat: repeat-x;
 }
 
-/**
- * Title wrapper
- *
- * Its width and font size are set by media query.
- *
- */
-
-.banner .title-wrapper {
-    position: absolute;
-    left: 0; 
-    right: 0; 
-    margin-left: auto; 
-    margin-right: auto;
-    margin-top: -80px;
-    font-family: "Dosis";
-}
-
-/**
- * Social media
- *
- */
-
-.banner .social-media {
-    margin-top: 70px;
-    margin-right: 20px;
-    float: right;
-    width: 200px;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-}
-  
-.banner .social-media div {
-    font-size: 21px;
-    font-family: "Dosis";
-}
-  
-.banner .social-media a {
-    font-size:20px;
-    text-decoration: none;
-    color: white;
-    padding-left: 3px;
-    padding-right: 3px;
-}
-
-.banner .social-media a:hover {
-    color: #c2a094;
-}
 
 /* ==========================================================================
    Top navigation bar
    ========================================================================== */
 
 /**
- * Topnav
- *
- * Represents the second half of the header.
- *
- * 1. Holds all content of the navigation bar.
- *
+ * Sets topnav to header's bottom
  */
+
+header nav {margin-top: auto;}
 
 .topnav {
-    overflow: hidden;
-    background-color: #3b3829;
-    margin-top: 0px;
-    font-family: "Dosis";
-    display: flex;
+    margin:0; /* Removes default nav ul margin*/
+    background-color:#3b3829;
+    height: 3em;
+    display:flex;
+    list-style: none;
     justify-content: center;
+    align-items: center;
+    align-content: space-between;
+    font-family: "Konkret Grotesk Pro Medium";
+    font-size: 1rem;
+    letter-spacing: 0.2rem;
+    overflow: hidden;
+} 
+
+/**
+ * Makes nav and nav li's paddings equals
+ */
+
+.topnav > li {
+    padding-top: 0.87em;
+    padding-bottom: 0.87em;
 }
 
 /**
- * Cart wrapper
- *
- * 1. Aligns the cart <a> + <i> icon.
- *
- */
- 
-.topnav .cart-wrapper {
-     display: flex;
- }
-
-.topnav .cart-wrapper i {
-     margin-top: 2px;
-     margin-right: 4px;
-     font-size: 21px;
- }
-
-/**
- * Span cart, new
- *
- * 1. Set menu's "CART" option font family and weight, so it doesn't affect its font awesome icon.
- * 2. Set menu's "NEW" option's color.
+ * Makes nav and nav li's paddings equals
  */
 
-.topnav span.cart {
-    font-family: "Dosis";
-    font-size: 20px;
+
+.topnav > li > a {
+    text-decoration: none;
+    color: white;
+    padding: 1.5em;
 }
 
-.topnav .new {
+.topnav > li:first-child > a {
     color: #f3d35a;
 }
 
-/**
- * Dropdown
- *
- * 1. Hides and shows dropdown content when top nav's "PRODUCTS" option is hovered.
- *
- */
+.topnav > li > a:hover{
+    color: #d1b79d;
+}
 
- .topnav .dropdown a {
-    text-decoration: none;
+/* ==========================================================================
+   Dropdown menu
+   ========================================================================== */
+
+.dropdown > a > i {
     color: white;
+    margin-left: 0.5rem;
 }
 
-.topnav > a, .topnav .dropdown > a {
-    color: white;
-    text-align: center;
-    padding: 14px 25px;
-    text-decoration: none;
-    font-size: 20px;
-    overflow: hidden;
-    
-}
-
-.topnav > a:hover, .topnav .dropdown > a:hover {
-    color: #ecb4bd;
-}
-
-/**
- * Dropdown content
- *
- * It's a submenu within dropdown class.
- *
- */
-
-.topnav .dropdown .dropdown-content {
+.dropdown-content {
     display: none;
-    margin-left: 282px;
-    margin-top: 54px;
-    text-align: left;
-    font-size: 18px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-top: 0.1em;
+    padding-bottom: 0.5em;
+    margin-top: 0.7rem;
     position: absolute;
-    width: 180px;
-    z-index: 1;
-    background-color:#fcfbfa;
-    border-left: 1px solid #b47d50;
-    border-right: 1px solid #b47d50;
-    border-bottom: 1px solid #b47d50;
-    font-weight: 550;
-    padding-bottom: 10px;
+    background-color: #3b3829;
+    font-family: "Konkret Grotesk Pro Light";
+    text-align: left;
 }
 
-.topnav .dropdown .dropdown-content a {
-    padding-left: 20px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+.dropdown-content > li {
     text-decoration: none;
-    color: #b47d50;
+    font-size: 1rem;
+    padding: 0;
 }
 
-.topnav .dropdown .dropdown-content a:hover {
-    background-color: #f5e2d0;
+.dropdown-content > li > a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 0.4em;
+    padding-right: 4em;
+    padding-left: 1.2em;
 }
 
+.dropdown-content a:hover {
+    background-color: #f0e7de;
+    color: #3b3829;
+}
 
-.topnav .dropdown:hover .dropdown-content {
-    display: flex;
-    flex-direction: column;
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 /* ==========================================================================
    Search box
    ========================================================================== */
 
-/**
- * Search box
- *
- */
-
-.search-box {
-    padding-top: 8px;
-    padding-bottom: 8px;
-    margin-right: 20px;
-}
-
 .search-box input[type="search"]::-webkit-search-decoration,
     input[type="search"]::-webkit-search-cancel-button,
     input[type="search"]::-webkit-search-results-button,
     input[type="search"]::-webkit-search-results-decoration {
   -webkit-appearance:none;
+}
+
+.search-box  {
+    padding: 0.87em;
 }
 
  .search-box input[type=search] {
@@ -303,23 +219,22 @@ html {
     padding-top: 8px;
     padding-bottom: 8px;
     padding-left: 38px;
-    padding-right: 35px;
-    color: #696765;
+    color: black;
 }
 
 .search-box input[type=search]:focus {
-    outline: 1px solid #c2a094;
+    outline: 2px solid #c2a094;
 }
 
 .search-box ::placeholder {
-    font-family:"Dosis Regular";
+    font-family:"Konkret Grotesk Pro Light";
     font-style: italic;
     color: #8d8b89;
   }
 
 .search-box button {
     text-decoration: none;
-    position: fixed;
+    position: absolute;
     font-family:'FontAwesome';
     font-weight: 100px;
     font-size: 18px;
@@ -338,49 +253,248 @@ html {
     font-size: 19px;
 }
 
-/* ==========================================================================
-   Content
-   ========================================================================== */
-
-.content {
-    margin: 0 auto;
-    margin-top: 50px;
-    width: 1500px;
+.topnav li:last-child i {
+    font-size: 19px;
+    margin-right: 0.3rem;
 }
 
-.advertising {
+/* ==========================================================================
+   Slider
+   ========================================================================== */
+.slider {   
     display: flex;
+    margin: 0 auto;
+    margin-top: 4rem;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow: hidden;
 }
 
-.advertising img {
-    width: 800px;
+.slider > i {
+    font-size: 2.5rem;
+    color: #3b3829;
 }
 
+main img {
+    width: 100vw;
+    vertical-align: middle;
+}
+
+main {
+    overflow: hidden;
+}
 
 /* ==========================================================================
-   Media queries
+   Slider arrows
    ========================================================================== */
 
-/**
- * Large desktop
- */
+.slider-arrows {   
+    display: flex;
+    margin: 0 auto;
+    margin-top: -12rem;
+    width: 95vw;
+    justify-content: space-between;
+}
 
-@media (min-width: 1025px) {
-    .header {
-        height: 279px;
-        width: 1918px;
-    }
 
-    .banner  {
-        height: 250px;
-    }
+.arrow {
+    padding: 2rem; /* Arrow size */
+    box-shadow: 1px -1px 0 1px #3b3829 inset;
+    -webkit-box-shadow: 3px -3px #3b3829 inset;
+    border: solid transparent;
+    border-width: 0 0 2rem 2rem;
+    transition: 0.2s;
+}
+  
+.arrow:hover {
+    box-shadow: 2px -2px 0 2px #c2b8a1 inset;
+    -webkit-box-shadow: 4px -4px #c2b8a1 inset;
+}
+  
+  .arrow-up    { transform:rotate(135deg) }
+  .arrow-right { transform:rotate(225deg) }
+  .arrow-down  { transform:rotate(-45deg) }
+  .arrow-left  { transform:rotate(45deg) }
 
-    .title-wrapper {
-        font-size: 15px;
-        width: 300px;
-    }
+/* ==========================================================================
+   Slider arrows animations
+   ========================================================================== */
 
-    .logo-wrapper {
-        width: 400px;
-    }
+.move-right {
+    position: relative;
+    -webkit-animation: backandforth 2s ease 0s;
+    -webkit-animation-iteration-count: infinite;
+    animation: backandforth 3s ease 0s;
+    animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes backandforth {0%{left:0;} 50%{left:58%;} 100%{left:0;}}
+
+@keyframes backandforth {0%{left:0;} 50%{left:2%;} 100%{left:0;}}
+
+.move-left {
+    position: relative;
+    -webkit-animation: backandforth2 2s ease 0s;
+    -webkit-animation-iteration-count: infinite;
+    animation: backandforth2 3s ease 0s;
+    animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes backandforth2 {0%{right:0;} 50%{right:58%;} 100%{right:0;}}
+
+@keyframes backandforth2 {0%{right:0;} 50%{right:2%;} 100%{right:0;}}
+
+/* ==========================================================================
+   Slider controllers
+   ========================================================================== */
+
+.controller-container {
+    position: absolute;
+    align-self: flex-end;
+    margin-bottom: 1rem;
+}
+
+.controller {
+    display: inline-block;
+    height: 0.8em;
+    width: 0.8em;
+    background-color: #9c9989;
+    border: 2px solid #f2e8ce;
+    border-radius: 50%;
+}
+
+
+.controllertest {
+    display: inline-block;
+    height: 0.8em;
+    width: 0.8em;
+    background-color: #3b3829;
+    border: 2px solid #f2e8ce;
+    border-radius: 50%;
+}
+/* ==========================================================================
+   Best sellers content
+   ========================================================================== */
+
+.best-sellers-title {
+    margin: 0 auto;
+    margin-top: 12rem;
+    color: #3b3829;
+    width: 7.6em;
+    height: 1.6em;
+    font-family: "Konkret Grotesk Pro Bold";
+    font-size: 1.7em;
+    letter-spacing: 0.2rem;
+    border-bottom: 2px solid #bcb49d;
+    display: flex;
+    flex-direction: column;
+}
+
+.best-sellers-title span i {
+   margin-top: -1rem;
+}
+
+.best-sellers-title span {
+    display: flex;
+    justify-content: center;
+    font-size: 1.8rem;
+    align-self: center;
+    width: 3rem;
+    margin-top: 2.5rem;
+    background-color: white;
+    height: 0.4em;
+    position: absolute;
+    overflow: hidden;
+}
+
+.view-all-btn {
+    width: 10em;
+    color: white;
+    background-color: #3b3829;
+    margin: 0 auto;
+    margin-top: 2rem;
+    text-align: center;
+    font-family: "Konkret Grotesk Pro Medium";
+    font-size: 1.3em;
+    letter-spacing: 0.2rem;
+}
+
+/* ==========================================================================
+   Vintage collection content
+   ========================================================================== */
+
+.vintage-collection-title {
+    margin: 0 auto;
+    margin-top: 10rem;
+    color: #3b3829;
+    width: 11.5em;
+    height: 1.6em;
+    font-family: "Konkret Grotesk Pro Bold";
+    font-size: 1.7em;
+    letter-spacing: 0.2rem;
+    border-bottom: 2px solid #bcb49d;
+    display: flex;
+    flex-direction: column;
+}
+
+.vintage-collection-title span i {
+   margin-top: -1rem;
+}
+
+.vintage-collection-title span {
+    display: flex;
+    justify-content: center;
+    font-size: 1.8rem;
+    align-self: center;
+    width: 3rem;
+    margin-top: 2.5rem;
+    background-color: white;
+    height: 0.4em;
+    position: absolute;
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   Cards
+   ========================================================================== */
+
+.cards-container {
+    display: flex;
+    margin: 0 auto;
+    margin-top: 5rem;
+    width: 80em;
+    justify-content: space-between;
+    font-family: "Konkret Grotesk Pro Medium";
+    flex-flow: row wrap;
+    align-content: space-around;
+    height: 65em;
+}
+
+.cards-container img {
+    width: 24em;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.card-title {
+    margin-top: 0.7rem;
+}
+
+.card-price {
+    margin-top: 0.1rem;
+    font-family: "Konkret Grotesk Pro Light";
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+footer {
+    background-color: #3b3829;
+    height: 10em;
+    margin-top: 7rem;
 }
