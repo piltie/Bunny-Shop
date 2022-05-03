@@ -6,19 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Molang Shop</title>
 
-    <link rel="icon" href="images/icon.png">
-    <link rel="stylesheet" href="css/atyle.css">
+    <link rel="icon" href="images/footer_icon.png">
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/1456ec8f47.js" crossorigin="anonymous"></script>
-    <script src="js/my.js"></script>
 </head>
 <body>
     <header>
-       <div class="scallop">Free international shipping on orders over $50! 💸</div>
+        <div id="search-box">
+            <button><i class="fa fa-search"></i></button>
+            <input type="search" name="search" placeholder="Search a product...">
+        </div>
+       <div class="scallop">
+            <img src="images/brazil.png">
+            <span>Free international shipping on orders over $50! 💸</span>
+            <span class="right-options">
+                <a onclick="showSearch()" class="cart-wrapper" href="#search"><i class="fa-solid fa-search"></i></a>
+                <a class="cart-wrapper" href="#bag"><i class="fa-solid fa-basket-shopping"></i></a>
+                <a class="cart-wrapper" href="#bag"><i class="fa-solid fa-user"></i></a>
+            </span>
+        </div>
         <a href="https://github.com/piltie"><img src="images/mugi.png" alt="Molang logo"></a>
         <nav>
             <ul class="topnav">
                 <li><a href="#new">NEW!</a></li>
-                <li><a href="#home">HOME</a></li>
                 <li><a href="#sale">SALE</a></li>
                 <li class="dropdown">
                     <a href="#products">LIMITED EDITION<i class="fa-solid fa-caret-down fa-2xs"></i></a>
@@ -28,7 +38,7 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#products">PRODUCTS<i class="fa-solid fa-caret-down fa-2xs"></i></a>
+                    <a href="#products">STATIONERY<i class="fa-solid fa-caret-down fa-2xs"></i></a>
                     <ul class="dropdown-content">
                         <li><a href="#">Stickers</a></li>
                         <li><a href="#">Plushies</a></li>
@@ -36,11 +46,42 @@
                         <li><a href="#">Accessories</a></li>
                     </ul>
                 </li>
-                <li class="search-box">
-                    <button><i class="fa fa-search"></i></button>
-                    <input type="search" name="search" placeholder="Search a product...">
+                <li class="dropdown">
+                    <a href="#products">ACCESSORIES<i class="fa-solid fa-caret-down fa-2xs"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Stickers</a></li>
+                        <li><a href="#">Plushies</a></li>
+                        <li><a href="#">Stationery</a></li>
+                        <li><a href="#">Accessories</a></li>
+                    </ul>
                 </li>
-                <li><a class="cart-wrapper" href="#bag"><i class="fa-solid fa-basket-shopping"></i>BAG: 0</a></li>
+                <li class="dropdown">
+                    <a href="#products">CHARACTERS<i class="fa-solid fa-caret-down fa-2xs"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Stickers</a></li>
+                        <li><a href="#">Plushies</a></li>
+                        <li><a href="#">Stationery</a></li>
+                        <li><a href="#">Accessories</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#products">BRANDS<i class="fa-solid fa-caret-down fa-2xs"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Stickers</a></li>
+                        <li><a href="#">Plushies</a></li>
+                        <li><a href="#">Stationery</a></li>
+                        <li><a href="#">Accessories</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#products">SHOP BY VALUE<i class="fa-solid fa-caret-down fa-2xs"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Stickers</a></li>
+                        <li><a href="#">Plushies</a></li>
+                        <li><a href="#">Stationery</a></li>
+                        <li><a href="#">Accessories</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </header>
@@ -63,12 +104,22 @@
         <section>
             <div class="best-sellers-title">BEST SELLERS<span><i class="fa-solid fa-sort-down"></i></span></div>
             <div class="cards-container">
-                <div class="card"><img src="images/MomoCat_Gel_Ink_Pen.jpg"><span class="card-title">Momo Cat Gel Ink Pen</span><span class="card-price">$3.99 USD</span></div>
+                <div class="card" ><img src="images/MomoCat_Gel_Ink_Pen.jpg"><span class="card-title">Momo Cat Gel Ink Pen</span><span class="card-price">$3.99 USD</span></div>
                 <div class="card"><img src="images/Tales_of_Japan_Hardcover.png"><span class="card-title">Tales of Japan Hardcover Notebook</span><span class="card-price">$25.99 USD</span></div>
                 <div class="card"><img src="images/Sumikko_Gurashi.png"><span class="card-title">Sumikko Gurashi Sticker Pack</span><span class="card-price">$5.99 USD</span></div>
                 <div class="card"><img src="images/Small_Hamster_Stickers.jpg"><span class="card-title">38 Pcs Kawaii Japanese Hamster Stickers</span><span class="card-price">$5.99 USD</span></div>
                 <div class="card"><img src="images/Green_Washi_Tape.jpg"><span class="card-title">Green Nature Washi Tape Set</span><span class="card-price">$14.99 USD</span></div>
                 <div class="card"><img src="images/Mechanical_Pencil.png"><span class="card-title">Pilot Color Eno Erasable Mechanical Pencil</span><span class="card-price">$3.39 USD</span></div>
+                <div class="view-all-btn">VIEW ALL</div>
+            </div>
+            <div class="new-arrivals-title">NEW ARRIVALS<span><i class="fa-solid fa-sort-down"></i></span></div>
+            <div class="cards-container">
+                <div class="card"><img src="images/VintageLetter_Scrapbook.png"><span class="card-title">Mixed Kraft Paper - Vintage Letter</span><span class="card-price">$5.99 USD</span></div>
+                <div class="card"><img src="images/VintageJournal_PaperStickers.png"><span class="card-title">Vintage Journal Paper Stickers</span><span class="card-price">$4.99 USD</span></div>
+                <div class="card"><img src="images/Vintage_WashiTape.jpg"><span class="card-title">Vintage Washi Tape</span><span class="card-price">$4.99 USD</span></div>
+                <div class="card"><img src="images/Vintage_StampStickers.png"><span class="card-title">Vintage Stamp Stickers</span><span class="card-price">$3.99 USD</span></div>
+                <div class="card"><img src="images/Hydrangea_GardenStamp.jpg"><span class="card-title">Hydrangea Garden Stamp</span><span class="card-price">$10.99 USD</span></div>
+                <div class="card"><img src="images/Vintage_FlowerStickers.jpg"><span class="card-title">Vintage Flower Stickers</span><span class="card-price">$5.99 USD</span></div>
                 <div class="view-all-btn">VIEW ALL</div>
             </div>
             <div class="vintage-collection-title">VINTAGE COLLECTION<span><i class="fa-solid fa-sort-down"></i></span></div>
@@ -83,6 +134,47 @@
             </div>
         </section>
     </main>
+</div>
 </body>
-<footer></footer>
+<footer>
+    <div class="footer-container">
+        <img src="images/footer_icon.png">
+        <div class="footer-content">
+            <h1>NEWSLETTER</h1> 
+            <p>Sign up for subscriber-only discounts, first look at newly-curated items and latest updates.</p>
+            <input type="text" id="name" name="name" placeholder="Your name">
+            <input type="email" name="email" placeholder="Your email">
+            <div class="subscribe-btn">Subscribe</div>
+        </div>
+        <div class="footer-content">
+            <h1>FOLLOW US</h1>
+            <nav class="social-media">
+                <ul class="social-media-icons">
+                    <li><a href="#twitter"><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href="#facebook"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href="#instagram"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="#tiktok"><i class="fa-brands fa-tiktok"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="footer-content">
+            <h1>CUSTOMER CARE</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about_us">About Us</a></li>
+                    <li><a href="#my_account">My Account</a></li>
+                    <li><a href="#shipping_returns">Shipping & Returns</a></li>
+                    <li><a href="#terms_conditions">Terms & Conditions</a></li>
+                    <li><a href="#privacy_policy">Privacy Policy</a></li>
+                    <li><a href="#payment_information">Payment Information</a></li>
+                    <li><a href="#contact_us">Contact us</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="copyright">
+            <h2>© 2022 Molang Shop (FICTIONAL) | Portfolio website by Sarah Carla Souza</h2>
+        </div>
+    </div>
+</footer>
+<script src="js/script.js"></script>
 </html>

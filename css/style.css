@@ -32,6 +32,17 @@
     src: url("../fonts/KonkretGroteskPro-Bold.ttf");
 }
 
+@font-face {
+    font-family: "Konkret Grotesk Pro Extra Light";
+    src: url("../fonts/KonkretGroteskPro-ExtraLight.ttf");
+}
+
+@font-face {
+    font-family: "Konkret Grotesk Pro Extra Regular";
+    src: url("../fonts/KonkretGroteskPro-Regular.ttf");
+}
+
+
 /* ==========================================================================
    Html, body and header
    ========================================================================== */
@@ -73,11 +84,13 @@ header > a {
 .scallop {
     position: relative;
     background: #3b3829;
-    padding: 1em;
+    padding: 1em 1.5em;
     text-align: center;
-    font-family: "Dosis Semi Bold";
+    font-family: "Konkret Grotesk Pro Medium";
     font-size: 1rem;
     color: white;
+    display: flex;
+    justify-content: space-between;
 }
   
 .scallop::after { 
@@ -94,6 +107,25 @@ header > a {
     background-repeat: repeat-x;
 }
 
+.scallop img {
+    width: 2em;
+    cursor: pointer;
+}
+
+.scallop a {
+    text-decoration: none;
+    color: white;
+}
+
+.scallop .right-options {
+    display: flex;
+    width: 6em;
+    justify-content: space-between;
+}
+
+.right-options a:hover {
+    color: #CEAB93;
+}
 
 /* ==========================================================================
    Top navigation bar
@@ -109,12 +141,12 @@ header nav {margin-top: auto;}
     margin:0; /* Removes default nav ul margin*/
     background-color:#3b3829;
     height: 3em;
-    display:flex;
+    display: flex;
     list-style: none;
     justify-content: center;
     align-items: center;
     align-content: space-between;
-    font-family: "Konkret Grotesk Pro Medium";
+    font-family: "Konkret Grotesk Pro Extra Regular";
     font-size: 1rem;
     letter-spacing: 0.2rem;
     overflow: hidden;
@@ -145,7 +177,7 @@ header nav {margin-top: auto;}
 }
 
 .topnav > li > a:hover{
-    color: #d1b79d;
+    color: #CEAB93;
 }
 
 /* ==========================================================================
@@ -167,8 +199,8 @@ header nav {margin-top: auto;}
     margin-top: 0.7rem;
     position: absolute;
     background-color: #3b3829;
-    font-family: "Konkret Grotesk Pro Light";
     text-align: left;
+    z-index: 1;
 }
 
 .dropdown-content > li {
@@ -182,12 +214,15 @@ header nav {margin-top: auto;}
     color: white;
     display: block;
     padding: 0.4em;
-    padding-right: 4em;
-    padding-left: 1.2em;
+    padding-right: 1.6em;
+    padding-left: 1.6em;
+    font-size: 0.95rem;
+    font-family: "Konkret Grotesk Pro Extra Regular";
 }
 
 .dropdown-content a:hover {
     background-color: #f0e7de;
+    font-family: "Konkret Grotesk Pro Medium";
     color: #3b3829;
 }
 
@@ -199,63 +234,71 @@ header nav {margin-top: auto;}
    Search box
    ========================================================================== */
 
-.search-box input[type="search"]::-webkit-search-decoration,
+#search-box input[type="search"]::-webkit-search-decoration,
     input[type="search"]::-webkit-search-cancel-button,
     input[type="search"]::-webkit-search-results-button,
     input[type="search"]::-webkit-search-results-decoration {
   -webkit-appearance:none;
 }
 
-.search-box  {
-    padding: 0.87em;
+#search-box {
+    visibility: hidden;
+    right: 0;
+    position: absolute;
+    transition: 0.5s;
+    transition-timing-function: linear;
 }
 
- .search-box input[type=search] {
-    background-color: #fff8ef;
-    border-radius: 5px;
+/*Show and hide search box transitions */
+.show-search-box {
+    transform: translateY(3.5rem);
+}
+
+.hide-search-box {
+    transform: translateY(-1rem);
+}
+
+
+ #search-box input[type=search] {
+    background-color: #fdfcfa;
+    border-bottom-left-radius: 10px;
     border: none;
     font-size: 18px;
     font-family: "Dosis Regular";
-    padding-top: 8px;
-    padding-bottom: 8px;
-    padding-left: 38px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    padding-left: 60px;
+    width: 25vw;
     color: black;
 }
 
-.search-box input[type=search]:focus {
-    outline: 2px solid #c2a094;
+#search-box input[type=search]:focus {
+    outline: none;
 }
 
-.search-box ::placeholder {
+#search-box ::placeholder {
     font-family:"Konkret Grotesk Pro Light";
-    font-style: italic;
     color: #8d8b89;
   }
 
-.search-box button {
+#search-box button {
     text-decoration: none;
     position: absolute;
     font-family:'FontAwesome';
     font-weight: 100px;
     font-size: 18px;
-    height: 37px;
-    padding-left: 10px;
-    padding-right: 10px;
+    margin-top: 30px;
+    margin-left: 15px;
     background-color: transparent;
     border: none;
     color: inherit;
     cursor: pointer;
 }
 
-.search-box button i {
+#search-box button i {
     font-family:'FontAwesome';
     color: #3b3829    ;
     font-size: 19px;
-}
-
-.topnav li:last-child i {
-    font-size: 19px;
-    margin-right: 0.3rem;
 }
 
 /* ==========================================================================
@@ -271,8 +314,18 @@ header nav {margin-top: auto;}
 }
 
 .slider > i {
-    font-size: 2.5rem;
+    font-size: 1.2rem;
     color: #3b3829;
+}
+
+.slider img {
+    animation: show-img 1.5s;
+    z-index: 0;
+}
+
+@keyframes show-img
+{ from { opacity: 0 }
+to {opacity: 1}
 }
 
 main img {
@@ -372,6 +425,7 @@ main {
     border: 2px solid #f2e8ce;
     border-radius: 50%;
 }
+
 /* ==========================================================================
    Best sellers content
    ========================================================================== */
@@ -379,7 +433,7 @@ main {
 .best-sellers-title {
     margin: 0 auto;
     margin-top: 12rem;
-    color: #3b3829;
+    color: #000000;
     width: 7.6em;
     height: 1.6em;
     font-family: "Konkret Grotesk Pro Bold";
@@ -392,6 +446,7 @@ main {
 
 .best-sellers-title span i {
    margin-top: -1rem;
+   color: #58564e;
 }
 
 .best-sellers-title span {
@@ -410,13 +465,18 @@ main {
 .view-all-btn {
     width: 10em;
     color: white;
-    background-color: #3b3829;
+    background-color: #8E806A;
     margin: 0 auto;
     margin-top: 2rem;
     text-align: center;
     font-family: "Konkret Grotesk Pro Medium";
     font-size: 1.3em;
     letter-spacing: 0.2rem;
+}
+
+.view-all-btn:hover {
+    background-color: #c2b9aa;
+    cursor: pointer;
 }
 
 /* ==========================================================================
@@ -426,7 +486,7 @@ main {
 .vintage-collection-title {
     margin: 0 auto;
     margin-top: 10rem;
-    color: #3b3829;
+    color: #000000;
     width: 11.5em;
     height: 1.6em;
     font-family: "Konkret Grotesk Pro Bold";
@@ -439,9 +499,47 @@ main {
 
 .vintage-collection-title span i {
    margin-top: -1rem;
+   color: #58564e;
 }
 
 .vintage-collection-title span {
+    display: flex;
+    justify-content: center;
+    font-size: 1.8rem;
+    align-self: center;
+    width: 3rem;
+    margin-top: 2.5rem;
+    background-color: white;
+    height: 0.4em;
+    position: absolute;
+    overflow: hidden;
+}
+
+
+/* ==========================================================================
+   New arrivals content
+   ========================================================================== */
+
+.new-arrivals-title {
+    margin: 0 auto;
+    margin-top: 10rem;
+    color: #000000;
+    width: 7.94em;
+    height: 1.6em;
+    font-family: "Konkret Grotesk Pro Bold";
+    font-size: 1.7em;
+    letter-spacing: 0.2rem;
+    border-bottom: 2px solid #bcb49d;
+    display: flex;
+    flex-direction: column;
+}
+
+.new-arrivals-title span i {
+   margin-top: -1rem;
+   color: #58564e;
+}
+
+.new-arrivals-title span {
     display: flex;
     justify-content: center;
     font-size: 1.8rem;
@@ -471,13 +569,32 @@ main {
 }
 
 .cards-container img {
-    width: 24em;
+    width: 23em;
+}
+
+.show-cards {
+    animation :mymove 1s ease-out forwards;
+    /* Safari and Chrome */
+    -webkit-animation:mymove 1s;
+}
+
+@keyframes mymove
+{ from {bottom:-5rem; opacity: 0;}
+to {bottom:0; opacity: 1}
+}
+
+@-webkit-keyframes mymove /* Safari and Chrome */
+{
+from {bottom:-5rem; opacity: 0;}
+to {bottom:0; opacity: 1;}
 }
 
 .card {
     display: flex;
     flex-direction: column;
     text-align: center;
+    visibility: hidden;
+    position:relative;
 }
 
 .card-title {
@@ -495,6 +612,151 @@ main {
 
 footer {
     background-color: #3b3829;
-    height: 10em;
+    height: 23em;
     margin-top: 7rem;
+    background-size: 30em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+footer input {
+    width: 16.5em;
+}
+
+footer input {
+    background-color: #fdfcfa;
+    padding: 0.6em;
+    padding-right: 4em;
+    border: none;
+
+}
+
+footer input:focus {
+    outline: 1px solid white;
+    /*border: 1px solid #201e13;*/
+}
+
+footer p {
+    color: white;
+    font-family: "Konkret Grotesk Pro Light";
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+footer ul {
+    list-style-type: none;
+    color: white;
+    font-family: "Konkret Grotesk Pro Light";
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+.social-media-icons {
+    display: flex;
+}
+
+.social-media-icons li {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.social-media-icons li a {
+    padding-left: 0.2em;
+    padding-right: 0.2em;
+    font-size: 1.2rem;
+}
+
+footer ul li a:hover {
+    color: #CEAB93;
+}
+
+.social-media-icons li:first-child {
+    margin-left: 0;
+}
+
+.social-media {
+    margin-bottom: 8.7rem;
+}
+
+footer ul li {
+    padding-top: 0.12em;
+    padding-bottom: 0.12em;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+.footer-container {
+    display: flex;
+    width: 80em;
+    height: 18em;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    margin-top: 1rem;
+}
+
+.footer-content {
+    display: flex;
+    width: 20em;
+    height: 13em;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.footer-content:nth-child(2) {
+    height: 15em;
+}
+
+.footer-content:nth-child(4) {
+    height: 14em;
+}
+
+.footer-content h1 {
+    width: 10,1em;
+    font-family: "Konkret Grotesk Pro Bold";
+    font-size: 1rem;
+    letter-spacing: 0.2rem;
+    color: #f2e8ce;
+    padding: 0;
+    margin: 0;
+}
+
+footer img {
+    width: auto;
+    height: 8em;
+    margin-top: 3rem;
+}
+
+.copyright {
+    color:#b4b2af;
+    font-size: 0.6rem;
+    font-family: "Konkret Grotesk Pro Extra Light";
+    text-align: center;
+    height: 2.2em;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+
+.copyright h2 {
+    margin: 0;
+    padding: 0;
+}
+
+.subscribe-btn {
+    color: white;
+    background-color: #8E806A;
+    width: 5em;
+    padding: 0.2em;
+    text-align: center;
+}
+
+.subscribe-btn:hover {
+    background-color: #c2b9aa;
+    cursor: pointer;
+}
+
