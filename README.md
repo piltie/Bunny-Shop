@@ -3,7 +3,7 @@
 
 » HTML5, CSS3 & Javascript.
 
-https://gleeful-sprite-02fdf4.netlify.app/
+Live preview: https://gleeful-sprite-02fdf4.netlify.app/
 
 ✱*.｡:｡✱*.:｡✧*.｡✰*.:｡✧*.｡:｡*.｡✱
 
